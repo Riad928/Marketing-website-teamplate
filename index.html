@@ -11,21 +11,52 @@
 <body class="bg-gray-50 text-gray-800">
 
     <!-- ================= HEADER ================= -->
-    <header class="bg-white shadow sticky top-0">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-600">BrandX</h1>
-
-            <nav class="space-x-6 hidden md:block">
-                <a href="#hero" class="hover:text-blue-600">Home</a>
-                <a href="#about" class="hover:text-blue-600">About</a>
-                <a href="#services" class="hover:text-blue-600">Services</a>
-                <a href="#pricing" class="hover:text-blue-600">Pricing</a>
-                <a href="#contact" class="hover:text-blue-600">Contact</a>
-            </nav>
-
-            <button class="md:hidden px-4 py-2 border rounded">Menu</button>
-        </div>
-    </header>
+        <header class="bg-white shadow sticky top-0 z-50">
+            <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center">
+                <!-- Logo -->
+                <h1 class="text-2xl font-bold text-blue-600">BrandX</h1>
+        
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#hero" class="text-lg hover:text-blue-600 transition">Home</a>
+                    <a href="#about" class="text-lg hover:text-blue-600 transition">About</a>
+                    <a href="#services" class="text-lg hover:text-blue-600 transition">Services</a>
+                    <a href="#pricing" class="text-lg hover:text-blue-600 transition">Pricing</a>
+                    <a href="#contact" class="text-lg hover:text-blue-600 transition">Contact</a>
+                </nav>
+        
+                <!-- Desktop Buttons -->
+                <div class="hidden md:flex space-x-2">
+                    <button class="border px-4 py-2 bg-blue-800 text-white rounded-xl shadow-md hover:shadow-lg transition">Sign
+                        Up</button>
+                    <button
+                        class="border px-4 py-2 bg-green-800 text-white rounded-xl shadow-md hover:shadow-lg transition">Login</button>
+                </div>
+        
+                <!-- Mobile Menu Button -->
+                <button id="menubtn"
+                    class="md:hidden px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    Menu
+                </button>
+            </div>
+        
+            <!-- Mobile Menu -->
+            <div id="mobilemenu" class="hidden md:hidden flex-col space-y-4 px-6 pb-4 bg-white shadow-md transition-all">
+                <a href="#hero" class="block text-lg hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="block text-lg hover:text-blue-600 transition">About</a>
+                <a href="#services" class="block text-lg hover:text-blue-600 transition">Services</a>
+                <a href="#pricing" class="block text-lg hover:text-blue-600 transition">Pricing</a>
+                <a href="#contact" class="block text-lg hover:text-blue-600 transition">Contact</a>
+        
+                <button
+                    class="w-full border px-4 py-2 bg-blue-800 text-white rounded-xl shadow-md hover:shadow-lg transition">Sign
+                    Up</button>
+                <button
+                    class="w-full border px-4 py-2 bg-green-800 text-white rounded-xl shadow-md hover:shadow-lg transition">Login</button>
+            </div>
+        </header>
+        
+       
 
     <!-- ================= HERO ================= -->
     <section id="hero" class="bg-gray-900 text-white py-28">
@@ -195,6 +226,16 @@
         </div>
         <p class="text-center mt-6 text-sm text-gray-500">© 2025 BrandX. All Rights Reserved.</p>
     </footer>
+
+    <!-- JS for Mobile Toggle -->
+    <script>
+        const menuBtn = document.getElementById('menubtn');
+        const mobileMenu = document.getElementById('mobilemenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
 
 </body>
 
